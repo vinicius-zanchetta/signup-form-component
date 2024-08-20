@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+:root {
+    /* Primary */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    /* Accent */
+    --blue: hsl(248, 32%, 49%);
+    /* Neutral */
+    --darkBlue: hsl(249, 10%, 26%);
+    --grayishBlue: hsl(246, 25%, 77%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Poppins";
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 100dvh;
+    background-color: var(--red);
+    background-image: url(images/bg-intro-desktop.png);
+    background-position: center;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.message-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    width: 500px;
+    gap: 40px;
+    min-height: 250px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.25;
+}
+
+.form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 398px;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+#try-it-free {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: border-box;
+    height: 60px;
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    vertical-align: middle;
+    border-radius: 12px;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form input[type=text],
+.form input[type=password] {
+    height: 54px;
+    min-width: 398px;
+    font-weight: 600;
+    padding: 0 30px;
+    border: 1px solid var(--grayishBlue);
+    color: var(--darkBlue);
+    caret-color: var(--blue);
+    border-radius: 6px;
+}
+
+.form input[type=text]:focus,
+.form input[type=password]:focus {
+    outline: 1px solid var(--blue);
+}
+
+#lastName,
+#email,
+#password,
+#button {
+    margin-top: 20px;
+}
+
+.form .missing-info {
+    background: url(images/icon-error.svg);
+    background-size: 20px;
+    background-position: 412px;
+    background-repeat: no-repeat;
+    border: 0.1px solid var(--red) !important;
+    outline: 2px solid var(--red);
+}
+
+
+.form .missing-info:focus {
+    outline: 2px solid var(--red) !important;
+}
+
+.form input[type=submit] {
+    cursor: pointer;
+    height: 54px;
+    min-width: 458px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    background-color: var(--green);
+    border-radius: 6px;
+    box-shadow: 0 3px 0 0 hsl(154, 53%, 43%);
+    outline: none;
+}
+
+.form input[type=submit]:active {
+    position: relative;
+    top: 2px;
+    box-shadow: 0 1px 0 0 hsl(154, 53%, 43%);
+    outline: none;
+    background-color: hsl(154, 76%, 57%);
+}
+
+.form #terms {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 40px;
+    flex-wrap: wrap;
+}
+
+.form #terms span {
+    width: 100%;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--grayishBlue);
+}
+
+.form #terms strong {
+    width: 100%;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--red);
+    cursor: pointer;
+}
+
+.errorMessage {
+    width: 100%;
+    text-align: end;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 8px 0 0;
+    font-style: italic;
+    color: var(--red);
+    display: none;
+}
+
+
+@media (max-width: 550px) {
+    body {
+        padding: 40px;
+        margin-inline: auto;
+        /* min-width: 375px; */
+    }
+
+    .message-section {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    .message-section h1 {
+        font-size: 30px;
+    }
+
+    #try-it-free {
+        height: 80px;
+        min-width: 100%;
+    }
+
+    .form-section {
+        gap: 40px;
+        min-width: 10px;
+    }
+    
+    .form {
+        min-width:100%;
+        box-sizing: border-box;
+        padding: 20px 0px;
+    }
+    
+    .form input[type=text],
+    .form input[type=password],
+    .form input[type=email] {
+        min-width: 40%;
+        padding: 0 20px;
+    }
+
+    .form input[type=submit] {
+        min-width: 260px;
+        max-width: 400px;
+        padding: 0 20px;
+    }
+
+    .form span {
+        padding: 12px  20px;
+    }
+}
